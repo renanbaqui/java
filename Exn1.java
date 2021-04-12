@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;
-
+import java.util.Objects;
 
 public class Main
 {
@@ -16,7 +16,7 @@ public class Main
     int location, index;
     char letter;
 
-    int[] letterCount = new int[20];
+    int[] letterCount = new int[26];
 
     //Scanner input = new Scanner(System.in);
     System.out.println ("Digite uma string: ");
@@ -34,17 +34,22 @@ public class Main
 		        letterCount[index]++;
 	        }
 	    }
-	    //System.out.println ("Digite uma string: ");
-            //line = input.nextLine ();
-	    line = null;
+	    for (index = 0; index < letterCount.length; index++)
+        {
+	        System.out.println ("O numero total de " +
+			(char) (index + (int) 'A') + "'s é " +
+			letterCount[index]);
+	        
+        }
+	//System.out.println ("Digite uma string: ");
+        //line = input.nextLine ();
+        System.out.println ("Digite uma string: ");
+        line = input.nextLine ();
+	    if (Objects.equals(line, ""))
+	    {
+	        line = null;
+	    }	    
 	    // line = input.nextLine(); //dataFile.readLine(); // Le a proxima linha
-      }
-
-      for (index = 0; index < letterCount.length; index++)
-      {
-	System.out.println ("O numero total de " +
-			    (char) (index + (int) 'A') + "'s é " +
-			    letterCount[index]);
     }
   }
 }
