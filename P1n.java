@@ -20,14 +20,25 @@ public class Main
     //Scanner input = new Scanner(System.in);
     System.out.println ("Digite uma string: ");
     String line = input.nextLine ();*/
-    System.out.println ("Seu resultado: ");
-    private static double calcula(float r)
-    {
+    
+    private static double calcula(float r){
         double resultado = Math.PI * r * r
+        System.out.println ("A area do círculo é: " + resultado);  
         return resultado;
     }
-    /*private static double calcula(float b, float a)
-    private static double calcula(float l1, floatl2, floatl3)*/
-    
+    private static double calcula(float b, float a){
+        doble resultado = a * b;
+        System.out.println ("A area do retângulo é: " + resultado);
+        return resultado;     
+    }
+    private static double calcula(float l1, floatl2, floatl3){
+        // check condition
+        int ok;
+        if (a + b <= c || a + c <= b || b + c <= a){
+            ok = 0;
+        else
+            ok = 1;
+        }
+    }    
   }
 }
