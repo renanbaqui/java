@@ -3,13 +3,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Objects;
 
-public class Ex2nX
+public class Ex1nX
 {
 
   public static void main (String[]args)
   {
 
-    Scanner input = new Scanner (System.in);
+    Scanner input = new Scanner (System.in); 
 
     int location, index;
     char letter;
@@ -22,12 +22,12 @@ public class Ex2nX
     
     while (line != null)    // loop de enquando houver linhas a serem lidas
     {
-	    for (location = 0; location < line.length (); location++)   // loop para contagem das letras
+	    for (location = 0; location < line.length (); location++)   // loop para a contagem das letras
 	    {
 	        letter = line.charAt (location);
 	        if ((letter >= 'A' && letter <= 'Z') || (letter >= 'a' && letter <= 'z'))
 	        {
-		    // 2o truque
+		        // 2o truque
 		        index = (int) Character.toUpperCase (letter) - (int) 'A';
 		        letterCount[index]++;
 	        }
