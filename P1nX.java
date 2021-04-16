@@ -3,8 +3,14 @@ import java.lang.Math.*;
 import java.util.Scanner;
 import java.util.Objects;
 
-public class Main
+import java.math.RoundingMode;	// arredondamento de casas decimais
+import java.text.DecimalFormat;	// arredondamento de casas decimais
+
+public class P1nX
 {
+ 
+  private static DecimalFormat df2 = new DecimalFormat("#.##"); // objeto de formato de duas casas decimais
+	
   public static void main (String[]args)
   {
 
@@ -21,17 +27,17 @@ public class Main
     System.out.println ("Digite uma string: ");
     String line = input.nextLine ();*/
     
-    private static double calcula(float r){
-        double resultado = Math.PI * r * r
-        System.out.println ("A area do circulo e': " + resultado + " unidades de area.");  
+    private static double calcula(double r){
+        double resultado = Math.PI * r * r;
+        System.out.println ("A area do circulo e': " + df2.format(resultado) + " unidades de area.");  
         return resultado;
     }
-    private static double calcula(float b, float a){
-        doble resultado = a * b;
-        System.out.println ("A area do retangulo e': " + resultado + " unidades de area.");
+    private static double calcula(double b, double a){
+        double resultado = a * b;
+        System.out.println ("A area do retangulo e': " + df2.format(resultado) + " unidades de area.");
         return resultado;     
     }
-    private static double calcula(float l1, floatl2, floatl3){
+    private static double calcula(double l1, double l2, double l3){
         // check condition
 		int a, b, c, ok;
 		a = 4;
@@ -46,15 +52,15 @@ public class Main
 	   
 	// Verifica triangulo equilatero
         if (a == b && b == c )
-        System.out.println("Triangulo equilatero");
+        System.out.println("O triangulo e' equilatero.");
  
-        // Verifica triangulo equilatero
+        // Verifica triangulo isosceles
         else if (a == b || b == c || c == b )
-        System.out.println("Triangulo Isosceles");
+        System.out.println("O triangulo e' isosceles.");
  
         // Else triangulo escaleno
         else
-        System.out.println("Triangulo Escaleno");
+        System.out.println("O triangulo e' escaleno.");
 		
 	System.out.println(ok);
         }
