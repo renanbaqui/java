@@ -23,20 +23,20 @@ public class Main
     
     private static double calcula(float r){
         double resultado = Math.PI * r * r
-        System.out.println ("A area do círculo é: " + resultado);  
+        System.out.println ("A area do circulo e': " + resultado + " unidades de area.");  
         return resultado;
     }
     private static double calcula(float b, float a){
         doble resultado = a * b;
-        System.out.println ("A area do retângulo é: " + resultado);
+        System.out.println ("A area do retangulo e': " + resultado + " unidades de area.");
         return resultado;     
     }
     private static double calcula(float l1, floatl2, floatl3){
         // check condition
 		int a, b, c, ok;
-		a = 1;
-		b = 10;
-		c = 12;
+		a = 4;
+		b = 5;
+		c = 5;
         if (a + b <= c || a + c <= b || b + c <= a){
             ok = 0; // triangulo invalido
         }
