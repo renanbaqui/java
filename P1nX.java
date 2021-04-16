@@ -61,7 +61,9 @@ public class P1nX
         // Else triangulo escaleno
         else
         System.out.println("O triangulo e' escaleno.");
-		
+	p= (l1+l1+l3)/2;
+	area = Math.sqrt(p*(p-l1)(p-l2)(p-l3))			
+		    
 	System.out.println(ok);
         }
     }    
