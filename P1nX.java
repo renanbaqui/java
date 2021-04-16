@@ -43,7 +43,20 @@ public class Main
         else{
             ok = 1; // triangulo valido
         }
-		System.out.println(ok);
+	   
+	// Verifica triangulo equilatero
+        if (a == b && b == c )
+        System.out.println("Triangulo equilatero");
+ 
+        // Verifica triangulo equilatero
+        else if (a == b || b == c || c == b )
+        System.out.println("Triangulo Isosceles");
+ 
+        // Else triangulo escaleno
+        else
+        System.out.println("Triangulo Escaleno");
+		
+	System.out.println(ok);
         }
     }    
   }
