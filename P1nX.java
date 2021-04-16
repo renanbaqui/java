@@ -33,11 +33,17 @@ public class Main
     }
     private static double calcula(float l1, floatl2, floatl3){
         // check condition
-        int ok;
+		int a, b, c, ok;
+		a = 1;
+		b = 10;
+		c = 12;
         if (a + b <= c || a + c <= b || b + c <= a){
-            ok = 0;
-        else
-            ok = 1;
+            ok = 0; // triangulo invalido
+        }
+        else{
+            ok = 1; // triangulo valido
+        }
+		System.out.println(ok);
         }
     }    
   }
