@@ -1,4 +1,3 @@
-// ************ falta completar
 import java.lang.Math.*;
 import java.util.Scanner;
 import java.util.Objects;
