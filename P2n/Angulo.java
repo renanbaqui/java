@@ -42,7 +42,7 @@ public class Angulo
 	{
 	    double radianos = (graus * Math.PI)/180;
 	    double cotangente = (Math.cos(radianos))/(Math.sin(radianos));
-	    System.out.println("Cotangente : " + df2.format(cotangente));
+	    System.out.println("Cotangente : " + df2.format(cotangente) + "\n");
 	    return cotangente;
 	}
 	
