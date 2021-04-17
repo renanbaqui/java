@@ -71,7 +71,9 @@ public class Main
     {
       System.out.println("Numero de argumentos excessivo");
     }	  
-
+    
+    boolean valido = true;
+    
     for (int i = 0; i < args.length; i++)	// loop de verificacao dos argumentos
     {
       boolean numeric = true;
@@ -79,6 +81,7 @@ public class Main
         Double num = Double.parseDouble(args[i]);
       } catch (NumberFormatException e) {
         numeric = false;
+        valido = false;
       }
       
       if (!numeric)	// se nao e' numero imprime a linha abaixo
@@ -87,23 +90,27 @@ public class Main
       }
     }
 
-    if (args.length==1)
+    if(valido)
     {
-      double a1 = Double.parseDouble(args[0]); 	// conversao de string para double
-	  calcula(a1);	     
-    }	
-    if (args.length==2)
-    {
-      double b1 = Double.parseDouble(args[0]);	// conversao de string para double
-	  double b2 = Double.parseDouble(args[1]);
-	  calcula(b1, b2);
+    
+      if (args.length==1)
+      {
+        double a1 = Double.parseDouble(args[0]); 	// conversao de string para double
+	    calcula(a1);	     
+      }	
+      if (args.length==2)
+      {
+        double b1 = Double.parseDouble(args[0]);	// conversao de string para double
+	    double b2 = Double.parseDouble(args[1]);
+	    calcula(b1, b2);
+      }
+      if (args.length==3)
+      {  
+        double c1 = Double.parseDouble(args[0]);	// conversao de string para double
+	    double c2 = Double.parseDouble(args[1]);
+	    double c3 = Double.parseDouble(args[2]);		
+	    calcula(c1, c2, c3);
+      }
     }
-    if (args.length==3)
-    {  
-      double c1 = Double.parseDouble(args[0]);	// conversao de string para double
-	  double c2 = Double.parseDouble(args[1]);
-	  double c3 = Double.parseDouble(args[2]);		
-	  calcula(c1, c2, c3);
-    }	        
   }
 }
