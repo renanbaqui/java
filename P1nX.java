@@ -10,6 +10,20 @@ public class P1nX
 {
  
   private static DecimalFormat df2 = new DecimalFormat("#.##"); // objeto de formato de duas casas decimais
+  
+  private static double calcula(double r)	// metodo de calculo da area do circulo
+  {
+    double resultado = Math.PI * r * r;
+    System.out.println ("A area do circulo e': " + df2.format(resultado) + " unidades de area.");  
+    return resultado;
+  }
+  
+  private static double calcula(double b, double a)	// metodo de calculo da area do retangulo
+  {
+    double resultado = a * b;
+    System.out.println ("A area do retangulo e': " + df2.format(resultado) + " unidades de area.");
+    return resultado;     
+  }
 	
   public static void main (String[]args)
   {
@@ -18,7 +32,7 @@ public class P1nX
       System.out.println("Numero de argumentos insuficiente");	
     }
     
-    if (args.length<=4) // se o numero de argumentos for igual ou maior a quatro
+    if (args.length>=4) // se o numero de argumentos for igual ou maior a quatro
     {
       System.out.println("Numero de argumentos excessivo");
     }	  
@@ -37,16 +51,7 @@ public class P1nX
         System.out.println((i+1)+"o argumento, “"+ args[i] +"”, nao eh numero");
       }
      
-    private static double calcula(double r){
-        double resultado = Math.PI * r * r;
-        System.out.println ("A area do circulo e': " + df2.format(resultado) + " unidades de area.");  
-        return resultado;
-    }
-    private static double calcula(double b, double a){
-        double resultado = a * b;
-        System.out.println ("A area do retangulo e': " + df2.format(resultado) + " unidades de area.");
-        return resultado;     
-    }
+
     private static double calcula(double l1, double l2, double l3)
     {
         // check condition
