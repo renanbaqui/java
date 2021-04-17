@@ -9,42 +9,39 @@ public class AnguloObj
 	public static DecimalFormat df2 = new DecimalFormat("#.##"); // objeto de formato de duas casas decimais
 	
 	private double arcoRad;
+	double radianos, seno, coseno, tangente, cotangente;
 	
 	public double cvtAngulo()	// metodo de calculo da area do circulo
 	{
-	    double radianos = (graus * Math.PI)/180;
+	    radianos = this.arcoRad;
 	    return radianos;
 	}
 	
 	public double fSeno()	// metodo de calculo da area do circulo
 	{
-	    double radianos = (graus * Math.PI)/180;
-	    double seno = Math.sin(radianos);
-	    System.out.println("Seno : " + df2.format(seno));
+	    radianos = (this.arcoRad * Math.PI)/180;
+	    seno = Math.sin(radianos);
 	    return seno;
 	}
 	
 	public double fCoseno()	// metodo de calculo da area do circulo
 	{
-	    double radianos = (graus * Math.PI)/180;
-	    double coseno = Math.cos(radianos);
-	    System.out.println("Coseno : " + df2.format(coseno));
+	    radianos = (this.arcoRad * Math.PI)/180;
+	    coseno = Math.cos(radianos);
 	    return coseno;
 	}
 	
 	public double fTangente()	// metodo de calculo da area do circulo
 	{
-	    double radianos = (graus * Math.PI)/180;
-	    double tangente = Math.tan(radianos);
-	    System.out.println("Tangente : " + df2.format(tangente));
+	    radianos = (this.arcoRad * Math.PI)/180;
+	    tangente = Math.tan(radianos);
 	    return tangente;
 	}
 	
 	public double fCotangente()	// metodo de calculo da area do circulo
 	{
-	    double radianos = (graus * Math.PI)/180;
-	    double cotangente = (Math.cos(radianos))/(Math.sin(radianos));
-	    System.out.println("Cotangente : " + df2.format(cotangente) + "\n");
+	    radianos = (this.arcoRad * Math.PI)/180;
+	    cotangente = (Math.cos(radianos))/(Math.sin(radianos));
 	    return cotangente;
 	}
 
@@ -56,7 +53,7 @@ public class AnguloObj
     
     public String toString(AnguloObj AnguloObj)
     {
-        System.out.println("Arco: "+this.arcoRad+" rad\n")
+        System.out.println("Arco: "+this.df2.format(arcoRad)+" rad\n"+fSeno()+fCoseno()+fTangente()+fCotangente());
     }
 	
 /*	public static void main(String[] args) {
