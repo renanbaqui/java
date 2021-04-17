@@ -19,29 +19,25 @@ public class AnguloObj
 	
 	public double fSeno()	// metodo de calculo da area do circulo
 	{
-	    radianos = (this.arcoRad * Math.PI)/180;
-	    seno = Math.sin(radianos);
+	    seno = Math.sin(this.arcoRad);
 	    return seno;
 	}
 	
 	public double fCoseno()	// metodo de calculo da area do circulo
 	{
-	    radianos = (this.arcoRad * Math.PI)/180;
-	    coseno = Math.cos(radianos);
+	    coseno = Math.cos(this.arcoRad);
 	    return coseno;
 	}
 	
 	public double fTangente()	// metodo de calculo da area do circulo
 	{
-	    radianos = (this.arcoRad * Math.PI)/180;
-	    tangente = Math.tan(radianos);
+	    tangente = Math.tan(this.arcoRad);
 	    return tangente;
 	}
 	
 	public double fCotangente()	// metodo de calculo da area do circulo
 	{
-	    radianos = (this.arcoRad * Math.PI)/180;
-	    cotangente = (Math.cos(radianos))/(Math.sin(radianos));
+	    cotangente = (Math.cos(this.arcoRad))/(Math.sin(this.arcoRad));
 	    return cotangente;
 	}
 
@@ -51,12 +47,12 @@ public class AnguloObj
         this.arcoRad = (g * Math.PI)/180;
     }
     
-    public String toString(AnguloObj AnguloObj)
+    public String toString()
     {
-        System.out.println("Arco: "+this.df2.format(arcoRad)+" rad\n"+fSeno()+fCoseno()+fTangente()+fCotangente());
+        return "Arco: "+ this.df2.format(arcoRad) +" rad\n"+
+        "Seno: "+ df2.format(fSeno()) + "\n" +
+        "Coseno: " + df2.format(fCoseno()) + "\n" +
+        "Tangente: " + df2.format(fTangente()) + "\n" +
+        "Cotangente: " + df2.format(fCotangente()) + "\n";
     }
-	
-/*	public static void main(String[] args) {
-	//	System.out.println(df2.format(fSeno(30)));
-*/	}
 }
