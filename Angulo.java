@@ -1,7 +1,14 @@
+
 import java.lang.Math.*;
+
+import java.math.RoundingMode;	// arredondamento de casas decimais
+import java.text.DecimalFormat;	// arredondamento de casas decimais
 
 public class Main
 {
+	
+	private static DecimalFormat df2 = new DecimalFormat("#.##"); // objeto de formato de duas casas decimais
+	
 	private static double cvtAngulo(double graus)	// metodo de calculo da area do circulo
 	{
 	    double radianos = (graus * Math.PI)/180;
@@ -37,6 +44,6 @@ public class Main
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(fTangente(45));
+		System.out.println(df2.format(fSeno(30)));
 	}
 }
