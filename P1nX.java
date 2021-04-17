@@ -47,7 +47,8 @@ public class P1nX
         System.out.println ("A area do retangulo e': " + df2.format(resultado) + " unidades de area.");
         return resultado;     
     }
-    private static double calcula(double l1, double l2, double l3){
+    private static double calcula(double l1, double l2, double l3)
+    {
         // check condition
 		int a, b, c, ok;
 		a = 4;
@@ -64,18 +65,35 @@ public class P1nX
         if (a == b && b == c )
         System.out.println("O triangulo e' equilatero.");
  
-        // Verifica triangulo isosceles
-        else if (a == b || b == c || c == b )
-        System.out.println("O triangulo e' isosceles.");
+          // Verifica triangulo isosceles
+          else if (a == b || b == c || c == b )
+          System.out.println("O triangulo e' isosceles.");
  
-        // Else triangulo escaleno
-        else
-        System.out.println("O triangulo e' escaleno.");
-	p= (l1+l1+l3)/2;
-	area = Math.sqrt(p*(p-l1)(p-l2)(p-l3))			
+          // Else triangulo escaleno
+          else
+          System.out.println("O triangulo e' escaleno.");
+	  p= (l1+l1+l3)/2;
+	  area = Math.sqrt(p*(p-l1)(p-l2)(p-l3))			
 		    
-	System.out.println(ok);
-        }
-    }    
+	  System.out.println(ok);
+    }
+    if (args.length==1)
+    {
+        double conv = Double.parseDouble(args[0]); 	// conversao de string para double
+	calcula(conv);	     
+    }	
+    if (args.length==2)
+    {
+        double conv1 = Double.parseDouble(args[0]);	// conversao de string para double
+	double conv2 = Double.parseDouble(args[1]);
+	calcula(conv1, conv2);
+    }
+    if (args.length==2)
+    {  
+        double conv1 = Double.parseDouble(args[0]);	// conversao de string para double
+	double conv2 = Double.parseDouble(args[1]);
+	double conv3 = Double.parseDouble(args[2]);		
+	calcula(conv1, conv2, conv3);
+    }	        
   }
 }
