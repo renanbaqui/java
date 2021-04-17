@@ -13,7 +13,30 @@ public class P1nX
 	
   public static void main (String[]args)
   {
+    if (args.length==0)	// se nao houver argumentos
+    {
+      System.out.println("Numero de argumentos insuficiente");	
+    }
+    
+    if (args.length<=4) // se o numero de argumentos for igual ou maior a quatro
+    {
+      System.out.println("Numero de argumentos excessivo");
+    }	  
 
+    for (int i = 0; i < args.length; i++)	// loop de verificacao dos argumentos
+    {
+      boolean numeric = true;
+      try {	// verifica se e' numero
+        Double num = Double.parseDouble(args[i]);
+      } catch (NumberFormatException e) {
+        numeric = false;
+      }
+      
+      if (!numeric)	// se nao e' numero imprime a linha abaixo
+      {
+        System.out.println((i+1)+"o argumento, “"+ args[i] +"”, nao eh numero");
+      }
+    
    /* Scanner input = new Scanner (System.in);
 
     //String line; //line = dataFile.readLine(); // Le uma linha por vez
