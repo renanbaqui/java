@@ -36,20 +36,7 @@ public class P1nX
       {
         System.out.println((i+1)+"o argumento, “"+ args[i] +"”, nao eh numero");
       }
-    
-   /* Scanner input = new Scanner (System.in);
-
-    //String line; //line = dataFile.readLine(); // Le uma linha por vez
-    private double peso, idade, altura;
-    int location, index;
-    char letter;
-
-    int[] letterCount = new int[26];
-
-    //Scanner input = new Scanner(System.in);
-    System.out.println ("Digite uma string: ");
-    String line = input.nextLine ();*/
-    
+     
     private static double calcula(double r){
         double resultado = Math.PI * r * r;
         System.out.println ("A area do circulo e': " + df2.format(resultado) + " unidades de area.");  
