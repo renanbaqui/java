@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.util.Objects;
+
 public class Main
 {
 	public static void main(String[] args) {
@@ -6,12 +9,14 @@ public class Main
 	
     	if (args.length==0)	// se nao houver argumentos
         {
-          System.out.println("Numero de argumentos insuficiente");	
+          System.out.println("Numero de argumentos insuficiente");
+          System.exit(0);
         }
         
-        if (args.length>=2) // se o numero de argumentos for igual ou maior a quatro
+        if (args.length>=2) // se o numero de argumentos for igual ou maior a dois
         {
           System.out.println("Numero de argumentos excessivo");
+          System.exit(0);
         }	
     	
     	boolean valido = true;
@@ -45,9 +50,22 @@ public class Main
 	
 	        System.out.println ("Digite uma medida em graus do angulo:");
             String line = input.nextLine ();    // string de leitura da linha
+            if (Objects.equals(line, ""))   // caso o usuario tecle 'enter' sem digitar outros caracteres 
+            {
+                line = null;    // atribui 'null' a linha e assim encerra o loop
+            }	 
             
             while (line != null)    // loop de enquando houver linhas a serem lidas
             {
+                    Angulo teste = new Angulo();
+                    
+                    double a1 = Double.parseDouble(line);
+                    teste.fSeno(a1);
+                    teste.fCoseno(a1);
+                    teste.fTangente(a1);
+                    teste.fCotangente(a1);
+                    
+                    
                     System.out.println ("Digite uma medida em graus do angulo:");  // pede novamente outra string
                     line = input.nextLine ();
             	    if (Objects.equals(line, ""))   // caso o usuario tecle 'enter' sem digitar outros caracteres 
