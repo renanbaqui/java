@@ -3,11 +3,11 @@ import java.util.Objects;
 
 public class Main
 {
-	public static void main(String[] args) {
+	public static void main(String[] args) {	// aceita como argumento da linha de comando a medida em graus de um angulo
 	    
 	    Scanner input = new Scanner (System.in);
 	
-    	if (args.length==0)	// se nao houver argumentos
+    	if (args.length==0)	// programa deve continuar sem argumentos!
         {
           System.out.println("Numero de argumentos insuficiente");
           System.exit(0);
@@ -38,7 +38,7 @@ public class Main
         }
     
         if(valido){
-            
+            // utiliza os metodos da classe Angulo para converte-lo para radianos e calcular o valor de suas funcoes trigonometricas, imprimindo estes valores
             Angulo teste = new Angulo();
             
             double a1 = Double.parseDouble(args[0]);
@@ -52,7 +52,7 @@ public class Main
             String line = input.nextLine ();    // string de leitura da linha
             if (Objects.equals(line, ""))   // caso o usuario tecle 'enter' sem digitar outros caracteres 
             {
-                line = null;    // atribui 'null' a linha e assim encerra o loop
+                line = null;    // A entrada de uma String vazia (simplesmente pressionando ENTER) encerra a leitura de valores e a aplicacao
             }	 
             
             while (line != null)    // loop de enquando houver linhas a serem lidas
@@ -70,7 +70,7 @@ public class Main
                     line = input.nextLine ();
             	    if (Objects.equals(line, ""))   // caso o usuario tecle 'enter' sem digitar outros caracteres 
             	    {
-            	        line = null;    // atribui 'null' a linha e assim encerra o loop
+            	        line = null;    // A entrada de uma String vazia (simplesmente pressionando ENTER) encerra a leitura de valores e a aplicacao
             	    }	 
             }
 	}
