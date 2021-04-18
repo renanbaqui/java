@@ -28,9 +28,5 @@ public class Main
 	   {
 	       System.out.println(medidas[i].toString());	// impressao do resultado de cada indice do array de objetos da classe AnguloObj
 	   }
-	   
-/*	   AnguloObj teste = new AnguloObj(120);
-	   System.out.println(teste.toString());
-*/
 	}
 }
