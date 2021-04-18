@@ -51,7 +51,7 @@ public class AnguloObj
     {
         return "Arco: "+ this.df2.format(arcoRad) +" rad\n"+
         "Seno: "+ df2.format(fSeno()) + "\n" +
-        "Coseno: " + df2.format(fCoseno()) + "\n" +
+        "Cosseno: " + df2.format(fCoseno()) + "\n" +
         "Tangente: " + df2.format(fTangente()) + "\n" +
         "Cotangente: " + df2.format(fCotangente()) + "\n";
     }
