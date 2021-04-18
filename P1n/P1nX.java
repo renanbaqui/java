@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.math.RoundingMode;	// arredondamento de casas decimais
 import java.text.DecimalFormat;	// arredondamento de casas decimais
 
-public class Main
+public class P1nX
 {
  
   private static DecimalFormat df2 = new DecimalFormat("#.##"); // objeto de formato de duas casas decimais
