@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Objects;
 
-public class Main
+public class P3nX
 {
 	public static void verifica(String s)   // metodo de verificacao de numero
 	{
