@@ -36,10 +36,10 @@ public class P3nX
 	   System.out.println("Digite o numero de angulos:");
 	   n = input.nextLine();
 	   verifica(n);
-	   int m = Integer.parseInt(n);
-	   if(m<1 || m>10)
+	   int m = Integer.parseInt(n);	// converte para int
+	   if(m<1 || m>10)	// tratamento de numero invalido de angulos
 	   {
-	     System.out.println("Numero de angulos invalido. Numero deve ser entre 1 e 10 inclusive.");	// tratamento de excessao do numero de angulos
+	     System.out.println("Numero de angulos invalido. Numero deve ser entre 1 e 10 inclusive.");	
 		 System.exit(0);
 	   }
 	   
@@ -51,7 +51,7 @@ public class P3nX
 	       String line = input.nextLine();
 	       verifica(line);
 	       double convertido = Double.parseDouble(line);   // converte para double
-	       medidas[i] = new AnguloObj(convertido);	// atribui ao array 'medidas' no indice i o objeto da classe AnguloObj com sua respectiva medida em graus
+	       medidas[i] = new AnguloObj(convertido);	// atribui ao array 'medidas' no indice i o objeto da classe AnguloObj com a sua respectiva medida em graus
 	   }
 	   
 	   System.out.println("");
@@ -60,7 +60,7 @@ public class P3nX
 	   
 	   for (int i = 0; i < m; i++)	// loop para iterar a impressao do resultado
 	   {
-	       System.out.println(medidas[i].toString());	// impressao do resultado de cada indice do array de objetos da classe AnguloObj
+	       System.out.println(medidas[i].toString());	// impressao do resultado de cada indice do array de objetos da classe AnguloObj utilizando toString
 	   }
 	}
 }
