@@ -121,7 +121,7 @@ public class P1nX
 	    double b2 = Double.parseDouble(args[1]);
 	    calcula(b1, b2);
       }
-      if (args.length==3)   // se ha tres argumentos e' um circulo
+      if (args.length==3)   // se ha tres argumentos e' um triangulo
       {  
         double c1 = Double.parseDouble(args[0]);	// conversoes de string para double
 	    double c2 = Double.parseDouble(args[1]);
