@@ -46,7 +46,7 @@ public class AnguloObj
     {
         this.arcoRad = (g * Math.PI)/180;
     }
-    // metodo toString() que retorna uma instância da classe String na forma de acordo com o requisito
+    // metodo toString() que retorna uma instancia da classe String no formato de acordo com o requisito
     public String toString()
     {
         return "Arco: "+ this.df2.format(arcoRad) +" rad\n"+
