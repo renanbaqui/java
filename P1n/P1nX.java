@@ -68,7 +68,7 @@ public class P1nX
       System.out.println("O triangulo e' equilatero.");
  
       // Verifica triangulo isosceles
-      else if (l1 == l2 || l2 == l3 || l3 == l2 )
+      else if (l1 == l2 || l2 == l3 || l3 == l1 )
       System.out.println("O triangulo e' isosceles.");
  
       // Senao e' triangulo escaleno
