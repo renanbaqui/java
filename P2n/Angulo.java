@@ -8,13 +8,13 @@ public class Angulo
 	
 	public static DecimalFormat df2 = new DecimalFormat("#.##"); // objeto de formato de duas casas decimais
 	
-	public static double cvtAngulo(double graus)	// metodo de conversao de graus para radianos
+	public static double cvtAngulo(double graus)	// metodo de classe de conversao de graus para radianos
 	{
 	    double radianos = (graus * Math.PI)/180;
 	    return radianos;
 	}
 	
-	public static double fSeno(double graus)	// metodo de calculo do seno
+	public static double fSeno(double graus)	// metodo de classe de calculo do seno
 	{
 	    double radianos = (graus * Math.PI)/180;
 	    double seno = Math.sin(radianos);
@@ -22,15 +22,15 @@ public class Angulo
 	    return seno;
 	}
 	
-	public static double fCoseno(double graus)	// metodo de calculo do cosseno
+	public static double fCoseno(double graus)	// metodo de classe de calculo do cosseno
 	{
 	    double radianos = (graus * Math.PI)/180;
 	    double coseno = Math.cos(radianos);
-	    System.out.println("Coseno : " + df2.format(coseno));
+	    System.out.println("Cosseno : " + df2.format(coseno));
 	    return coseno;
 	}
 	
-	public static double fTangente(double graus)	// metodo de calculo da tangente
+	public static double fTangente(double graus)	// metodo de classe de calculo da tangente
 	{
 	    double radianos = (graus * Math.PI)/180;
 	    double tangente = Math.tan(radianos);
@@ -38,12 +38,12 @@ public class Angulo
 	    return tangente;
 	}
 	
-	public static double fCotangente(double graus)	// metodo de calculo da cotangente
+	public static double fCotangente(double graus)	// metodo de classe de calculo da cotangente
 	{
 	    double radianos = (graus * Math.PI)/180;
 	    double cotangente = (Math.cos(radianos))/(Math.sin(radianos));
 	    System.out.println("Cotangente : " + df2.format(cotangente) + "\n");
 	    return cotangente;
 	}
-
+	
 }
