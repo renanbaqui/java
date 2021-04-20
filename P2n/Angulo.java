@@ -16,7 +16,6 @@ public class Angulo
 	
 	public static double fSeno(double radianos)	// metodo de classe de calculo do seno
 	{
-	    //double radianos = (graus * Math.PI)/180;
 	    double seno = Math.sin(radianos);
 	    System.out.println("Seno : " + df2.format(seno));
 	    return seno;
@@ -24,7 +23,6 @@ public class Angulo
 	
 	public static double fCoseno(double radianos)	// metodo de classe de calculo do cosseno
 	{
-	    //double radianos = (graus * Math.PI)/180;
 	    double coseno = Math.cos(radianos);
 	    System.out.println("Cosseno : " + df2.format(coseno));
 	    return coseno;
@@ -32,7 +30,6 @@ public class Angulo
 	
 	public static double fTangente(double radianos)	// metodo de classe de calculo da tangente
 	{
-	    //double radianos = (graus * Math.PI)/180;
 	    double tangente = Math.tan(radianos);
 	    System.out.println("Tangente : " + df2.format(tangente));
 	    return tangente;
@@ -40,7 +37,6 @@ public class Angulo
 	
 	public static double fCotangente(double radianos)	// metodo de classe de calculo da cotangente
 	{
-	    //double radianos = (graus * Math.PI)/180;
 	    double cotangente = (Math.cos(radianos))/(Math.sin(radianos));
 	    System.out.println("Cotangente : " + df2.format(cotangente) + "\n");
 	    return cotangente;
