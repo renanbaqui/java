@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.util.Objects;
 
-public class Main
+public class P2nX
 {
 	public static void verifica(String s)   // metodo de verificacao de numero
 	{
-    	boolean numeric = true;
+    		boolean numeric = true;
     
 		try {	// verifica se e' numero
 		  Double num = Double.parseDouble(s);
@@ -36,7 +36,7 @@ public class Main
 	
 	public static void main(String[] args) {	// metodo main que aceita como argumento da linha de comando a medida em graus de um angulo
 	    
-        Scanner input = new Scanner (System.in);
+        	Scanner input = new Scanner (System.in);
 	
 		if (args.length>=2) // se o numero de argumentos for igual ou maior a dois
 		{
@@ -50,14 +50,14 @@ public class Main
 		    calcula(args[0]);
 		}        
 	
-	    System.out.println ("Digite a medida em graus do angulo:");
+	    	System.out.println ("Digite a medida em graus do angulo:");
 		String line = input.nextLine ();    // string de leitura da linha
 		if (Objects.equals(line, ""))   // caso o usuario tecle 'enter' sem digitar outros caracteres 
 		{
 		    System.exit(0);    // A entrada de uma String vazia (simplesmente pressionando ENTER) encerra a leitura de valores e a aplicacao
 		}	 
         
-        verifica(line);
+        	verifica(line);
         
 		while (line != null)    // loop de enquando houver linhas a serem lidas
 		{
