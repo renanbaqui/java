@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.util.Objects;
 
-public class P2nX
+public class Main
 {
 	public static void verifica(String s)   // metodo de verificacao de numero
 	{
-    		boolean numeric = true;
+    	boolean numeric = true;
     
 		try {	// verifica se e' numero
 		  Double num = Double.parseDouble(s);
@@ -23,19 +23,20 @@ public class P2nX
 	public static void calcula(String t)    // metodo de calculo das funcoes trigonometricas
 	{
 		// utiliza os metodos da classe Angulo para converte-lo para radianos e calcular o valor de suas funcoes trigonometricas, imprimindo estes valores
-		Angulo elefante = new Angulo();
+		Angulo objeto = new Angulo();
 
 		double convertido = Double.parseDouble(t);   // converte para double
-		elefante.fSeno(convertido);
-		elefante.fCoseno(convertido);
-		elefante.fTangente(convertido);
-		elefante.fCotangente(convertido);
+		double rad = objeto.cvtAngulo(convertido);  // converte de graus para radianos
+		objeto.fSeno(rad);      // calcula e imprime seno
+		objeto.fCoseno(rad);    // calcula e imprime cosseno
+		objeto.fTangente(rad);  // calcula e imprime tangente
+		objeto.fCotangente(rad);   // calcula e imprime cotangente
 	    
 	}	
 	
-	public static void main(String[] args) {	// aceita como argumento da linha de comando a medida em graus de um angulo
+	public static void main(String[] args) {	// metodo main que aceita como argumento da linha de comando a medida em graus de um angulo
 	    
-        	Scanner input = new Scanner (System.in);
+        Scanner input = new Scanner (System.in);
 	
 		if (args.length>=2) // se o numero de argumentos for igual ou maior a dois
 		{
@@ -49,20 +50,20 @@ public class P2nX
 		    calcula(args[0]);
 		}        
 	
-	    	System.out.println ("Digite uma medida em graus do angulo:");
+	    System.out.println ("Digite a medida em graus do angulo:");
 		String line = input.nextLine ();    // string de leitura da linha
 		if (Objects.equals(line, ""))   // caso o usuario tecle 'enter' sem digitar outros caracteres 
 		{
 		    System.exit(0);    // A entrada de uma String vazia (simplesmente pressionando ENTER) encerra a leitura de valores e a aplicacao
 		}	 
         
-        	verifica(line);
+        verifica(line);
         
 		while (line != null)    // loop de enquando houver linhas a serem lidas
 		{
 			calcula(line);
 
-			System.out.println ("Digite uma medida em graus do angulo:");  // pede novamente outra string
+			System.out.println ("Digite a medida em graus do angulo:");  // pede novamente outra string
 			line = input.nextLine ();
 			if (Objects.equals(line, ""))   // caso o usuario tecle 'enter' sem digitar outros caracteres 
 			{
