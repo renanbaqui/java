@@ -2,9 +2,9 @@ public class Funcionario
 {
     
     String nome, codigo;
-    double salario, salarioLiquido;
+    float salario, salarioLiquido;
     
-    public Funcionario(String n, String c, double s)
+    public Funcionario(String n, String c, float s)
     {
         this.nome = n;
         this.codigo = c;
