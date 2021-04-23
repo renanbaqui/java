@@ -1,5 +1,6 @@
 public class FuncionarioExct extends FuncCntrd
 {
+ 
     private float gratificacao;
     
     public FuncionarioExct(float g)
@@ -7,17 +8,16 @@ public class FuncionarioExct extends FuncCntrd
         this.gratificacao = g;
     }
     
-    public void calculaSalario()
+    float calculaSalario()
     {
-        this.salarioLiquido += this.gratificacao;
+        return Funcionario.FuncCntrd.calculaSalario() += this.gratificacao;
     }
     
     public String toString()
     {
     
-        return "acrescenta à versão do método toString da classe pai, um “*” ao lado do
-código e exibe também o valor da gratificação (planeje direitinho a “cadeia” de toString para
-ficar modular, ao invés de ficar repetindo código – reuso é fundamental.";
+        return FuncCntrd.toString() + "\n" +
+        this.gratificacao;
     }
     
 }
