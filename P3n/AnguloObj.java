@@ -8,7 +8,7 @@ public class AnguloObj
 	
 	public static DecimalFormat df2 = new DecimalFormat("#.##"); // objeto de formato de duas casas decimais
 	
-	private double arcoRad;	// campo privativo (encapsulado), double, 'arcoRad' que é a medida em radianos de um angulo
+	private double arcoRad;	// campo privativo (encapsulado), double, 'arcoRad' que e' a medida em radianos de um angulo
 	double radianos, seno, coseno, tangente, cotangente;
 	
 	public double cvtAngulo()	// metodo de instancia para conversao de angulo em graus para radianos
@@ -55,4 +55,5 @@ public class AnguloObj
         "Tangente: " + df2.format(fTangente()) + "\n" +
         "Cotangente: " + df2.format(fCotangente()) + "\n";
     }
+	
 }
