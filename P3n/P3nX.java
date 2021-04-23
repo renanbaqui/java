@@ -3,11 +3,29 @@ import java.util.Objects;
 
 public class P3nX
 {
-	public static void verifica(String s)   // metodo de verificacao de numero
+	
+	public static void verificaInt(String s)   // metodo de verificacao de numero inteiro
 	{
     	boolean numeric = true;
     
-		try {	// verifica se e' numero
+		try {	// verifica se e' numero inteiro
+		  Integer num = Integer.parseInt(s);
+		} catch (NumberFormatException e) {
+		  numeric = false;
+		}
+        
+		if (!numeric)	// se nao e' numero imprime a linha abaixo e sai do programa
+		{
+		  System.out.println("O argumento “"+ s +"” nao eh numero inteiro.");
+		  System.exit(0);
+		}    
+	}
+
+	public static void verificaDouble(String s)   // metodo de verificacao de numero double
+	{
+    	boolean numeric = true;
+    
+		try {	// verifica se e' numero double
 		  Double num = Double.parseDouble(s);
 		} catch (NumberFormatException e) {
 		  numeric = false;
@@ -15,7 +33,7 @@ public class P3nX
         
 		if (!numeric)	// se nao e' numero imprime a linha abaixo e sai do programa
 		{
-		  System.out.println("O argumento “"+ s +"” nao eh numero");
+		  System.out.println("O argumento “"+ s +"” nao eh numero valido.");
 		  System.exit(0);
 		}    
 	}
@@ -25,7 +43,7 @@ public class P3nX
 	    
 	   if (args.length>=1) // se o numero de argumentos for igual ou maior a um
 	   {
-	     System.out.println("Numero de argumentos excessivo");
+	     System.out.println("Numero de argumentos excessivo.");
 		 System.exit(0);
 	   }	
 	   
@@ -35,7 +53,7 @@ public class P3nX
 	   
 	   System.out.println("Digite o numero de angulos:");
 	   n = input.nextLine();
-	   verifica(n);	// verifica se o angulo inserido e' numero
+	   verificaInt(n);	// verifica se o angulo inserido e' numero inteiro
 	   int m = Integer.parseInt(n);	// converte para tipo de dados int
 	   if(m<1 || m>10)	// tratamento de numero invalido de angulos
 	   {
@@ -49,8 +67,8 @@ public class P3nX
 	   {
 	       System.out.println("Digite a medida em graus do " + (i+1) +"o angulo:");
 	       String line = input.nextLine();
-	       verifica(line);
-	       double convertido = Double.parseDouble(line);   // converte para double
+	       verificaDouble(line);
+	       double convertido = Double.parseDouble(line);   // converte para tipo de dados double
 	       medidas[i] = new AnguloObj(convertido);	// atribui ao array 'medidas' no indice i o objeto da classe AnguloObj com a sua respectiva medida em graus
 	   }
 	   
@@ -64,4 +82,5 @@ public class P3nX
 	   }
 	
 	}
+	
 }
