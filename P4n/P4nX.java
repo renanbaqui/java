@@ -77,13 +77,15 @@ public class Main
         System.out.println("--- Folha Salarial ---\n");
         Iterator itr=teste.iterator();
         while(itr.hasNext()){  
-            Funcionario st=(Funcionario)itr.next();
+            FuncCntrd st=(FuncCntrd)itr.next();
             System.out.println("Nome:");
             System.out.println(st.nome);
             System.out.println("Codigo:");
             System.out.println(st.codigo);
-            System.out.println("Salario:");
-            System.out.println(st.salario);
+            System.out.println("Salario-Base:");
+            System.out.println(st.calculaSalario(st.dependentes)); // ao rodar o metodo atribui novo valor ao campo salario
+            System.out.println("Salario-Liquido:");
+            System.out.println(st.calculaSalario());
             System.out.println("----");
         }  
     /*    System.out.println("Nome:");
