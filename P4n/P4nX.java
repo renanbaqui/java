@@ -18,22 +18,23 @@ public class Main
         //c. Invocar o método geraFolha no objeto instanciado da classe principal.
     }*/
     
-/*    public static void entDados()
+    public static void entDados()
     {
-        ArrayList<Funcionario> teste = new ArrayList<Funcionario>();
         Scanner entrada = new Scanner(System.in);
         System.out.println("Contratado ou Executivo (c/e)?");
         String ce = entrada.nextLine();
-        System.out.println("Nome do Empregado:\n");
+        System.out.println("Nome do Empregado:");
         String a = entrada.nextLine();
         System.out.println("Codigo:");
         String b = entrada.nextLine();
         System.out.println("Salario:");
         float c = entrada.nextFloat();
+        Funcionario f1 = new Funcionario(a, b, c);
+        teste.add(f1);
+
     //    verificaFloat(s);
     //    teste.salario.add(s);
-        Funcionario f1 = new Funcionario(b, b, c);
-        teste.add(f1);
+
     //    System.out.println("Numero de Dependentes:");
     //    int d = input.nextInt();
     //    verificaInt(d);
@@ -41,11 +42,13 @@ public class Main
         
         // O método entDados é uma rotina onde se pede ao usuário o tipo de funcionário a ser criado, cria a
         // instância do objeto correspondente e coloca no ArrayList
-    }*/
+    }
     
     public static void geraFolha()
     {
     //    ArrayList<Funcionario> teste = new ArrayList<Funcionario>();
+        
+        System.out.println("--- Folha Salarial ---\n");
         Iterator itr=teste.iterator();
         while(itr.hasNext()){  
             Funcionario st=(Funcionario)itr.next();
@@ -55,6 +58,7 @@ public class Main
             System.out.println(st.codigo);
             System.out.println("Salario:");
             System.out.println(st.salario);
+            System.out.println("----");
         }  
     /*    System.out.println("Nome:");
         teste.nome.get(i);
@@ -78,36 +82,13 @@ public class Main
         System.out.println("Quantos Funcionarios?");    // pedir ao usuário o número de objetos (FuncCntrd e FuncExct) 
                                                         // para os quais o salário vai ser calculado;
         f = input.nextInt();
-        
+        //verifica(f);
     //    Main p = new Main(f);
-        
-        
         System.out.println("--- Cadastro de Funcionarios");
-        
-        
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Contratado ou Executivo (c/e)?");
-        String ce = entrada.nextLine();
-        System.out.println("Nome do Empregado:\n");
-        String a = entrada.nextLine();
-        System.out.println("Codigo:");
-        String b = entrada.nextLine();
-        System.out.println("Salario:");
-        float c = entrada.nextFloat();
-        Funcionario f1 = new Funcionario(b, b, c);
-        teste.add(f1);
-
-        
-        
-        System.out.println("--- Folha Salarial ---\n");
-        
-        
-      //  for (int i = 0; i < f; i++){
-        
-            geraFolha();
-            
-    //    }
-        
+        for (int i = 0; i < f; i++){
+            entDados();    
+        }
+        geraFolha();
         // calculaSalarios(); //???
     }
 }
