@@ -45,7 +45,10 @@ public class Main
                 teste.add(f1);
                 break;
               case "e":
-                // code block
+                System.out.println("Gratificacao:");
+                float e = entrada.nextFloat();
+                FuncionarioExct f2 = new FuncionarioExct(a, b, c, d, e);
+                teste.add(f2);
                 break;
             //  default:
                 // code block
