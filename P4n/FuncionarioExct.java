@@ -3,20 +3,22 @@ public class FuncionarioExct extends FuncCntrd
  
     private float gratificacao;
     
-    public FuncionarioExct(float g)
+    public FuncionarioExct(String a, String b, float d, int i, float g)
     {
+        super(a, b, d, i);
         this.gratificacao = g;
     }
     
     float calculaSalario()
     {
-        return Funcionario.FuncCntrd.calculaSalario() += this.gratificacao;
+        float ok = super.calculaSalario();
+        return ok + this.gratificacao;
     }
     
     public String toString()
     {
     
-        return FuncCntrd.toString() + "\n" +
+        return super.toString() + "\n" +
         this.gratificacao;
     }
     
