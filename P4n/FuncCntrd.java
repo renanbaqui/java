@@ -21,6 +21,7 @@ public class FuncCntrd extends Funcionario
         this.salarioFamilia = numeroDependentes * valorPorDep; 
         float salarioBase = this.salario + this.salarioFamilia;
     //    return calculaSalario();
+        this.salario = salarioBase;
         return salarioBase;
     }
     
@@ -30,7 +31,6 @@ public class FuncCntrd extends Funcionario
         this.codigo + "\n" +
         (this.salario+this.salarioFamilia) + "\n" + // salario base
         calculaSalario(); // salario liquido
-        
     }
     
 }
