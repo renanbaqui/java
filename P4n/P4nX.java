@@ -4,33 +4,40 @@ import java.util.*;
 
 public class Main
 {
-    static ArrayList<Funcionario> teste = new ArrayList<Funcionario>();
+    //static ArrayList<Funcionario> teste2 = new ArrayList<Funcionario>();
+    
+    static ArrayList<Funcionario> teste;
+    static int f;
     
     //ArrayList<Funcionario> teste;
     
     //ArrayList<Funcionario> teste = new ArrayList<Funcionario>(); // Funcionarios ??? 
     
-/*    public Main(int numeroFuncionarios) // criar uma instância da classe principal (sim, isso mesmo!).
+    public Main(int numeroFuncionarios) // criar uma instância da classe principal (sim, isso mesmo!).
     {
         
         teste = new ArrayList(numeroFuncionarios);
         //b. Invocar o método entDados no objeto instanciado da classe principal;
         //c. Invocar o método geraFolha no objeto instanciado da classe principal.
-    }*/
+    }
     
     public static void entDados()
     {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Contratado ou Executivo (c/e)?");
-        String ce = entrada.nextLine();
-        System.out.println("Nome do Empregado:");
-        String a = entrada.nextLine();
-        System.out.println("Codigo:");
-        String b = entrada.nextLine();
-        System.out.println("Salario:");
-        float c = entrada.nextFloat();
-        Funcionario f1 = new Funcionario(a, b, c);
-        teste.add(f1);
+        
+        for (int i = 0; i < f; i++)
+        {
+            System.out.println("Contratado ou Executivo (c/e)?");
+            String ce = entrada.nextLine();
+            System.out.println("Nome do Empregado:");
+            String a = entrada.nextLine();
+            System.out.println("Codigo:");
+            String b = entrada.nextLine();
+            System.out.println("Salario:");
+            float c = entrada.nextFloat();
+            Funcionario f1 = new Funcionario(a, b, c);
+            teste.add(f1);
+        }
 
     //    verificaFloat(s);
     //    teste.salario.add(s);
@@ -75,20 +82,20 @@ public class Main
     public static void main(String[] args) {
     
         Scanner input = new Scanner(System.in);
-        int f;
+        
        // String ce;
       //  ArrayList<FuncionarioExct> teste = new ArrayList<FuncionarioExct>(); // Funcionarios ??? 
         
         System.out.println("Quantos Funcionarios?");    // pedir ao usuário o número de objetos (FuncCntrd e FuncExct) 
-                                                        // para os quais o salário vai ser calculado;
-        f = input.nextInt();
+        f = input.nextInt();                            // para os quais o salário vai ser calculado;
         //verifica(f);
-    //    Main p = new Main(f);
+        
+        Main p = new Main(f);
+        
         System.out.println("--- Cadastro de Funcionarios");
-        for (int i = 0; i < f; i++){
-            entDados();    
-        }
-        geraFolha();
+//        
+        p.entDados();    //       
+        p.geraFolha();
         // calculaSalarios(); //???
     }
 }
