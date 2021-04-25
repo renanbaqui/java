@@ -1,7 +1,7 @@
 public class Funcionario
 {
     
-    static String nome, codigo;
+    String nome, codigo;
     float salario, salarioLiquido;
     
     public Funcionario(String n, String c, float s)
