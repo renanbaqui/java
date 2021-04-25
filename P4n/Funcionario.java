@@ -19,7 +19,6 @@ public class Funcionario
     
     public String toString()
     {
-    
         return this.nome + "\n" +
         this.codigo+ "\n" +
         this.salario; // salarioBase?
