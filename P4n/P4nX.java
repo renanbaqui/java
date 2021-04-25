@@ -36,8 +36,25 @@ public class Main
             String b = entrada.nextLine();
             System.out.println("Salario:");
             float c = entrada.nextFloat();
-            Funcionario f1 = new Funcionario(a, b, c);
-            teste.add(f1);
+            System.out.println("Numero de Dependentes:");
+            int d = entrada.nextInt();
+            
+            switch(ce) {
+              case "c":
+                FuncCntrd f1 = new FuncCntrd(a, b, c, d);
+                teste.add(f1);
+                break;
+              case "e":
+                // code block
+                break;
+            //  default:
+                // code block
+            }
+            
+            
+            
+            //Funcionario f1 = new Funcionario(a, b, c);
+            //teste.add(f1);
             entrada.nextLine(); // consome a proxima linha
         }
 
