@@ -16,14 +16,15 @@ public class Main
     public Main(int numeroFuncionarios) // criar uma instância da classe principal (sim, isso mesmo!).
     {
         
-        teste = new ArrayList(numeroFuncionarios);
-        //b. Invocar o método entDados no objeto instanciado da classe principal;
-        //c. Invocar o método geraFolha no objeto instanciado da classe principal.
+        teste = new ArrayList<Funcionario>(numeroFuncionarios); // ?? teste = new ArrayList(numeroFuncionarios)
+        
     }
     
     public static void entDados()
     {
+        
         Scanner entrada = new Scanner(System.in);
+        
         
         for (int i = 0; i < f; i++)
         {
@@ -37,6 +38,7 @@ public class Main
             float c = entrada.nextFloat();
             Funcionario f1 = new Funcionario(a, b, c);
             teste.add(f1);
+            entrada.nextLine(); // consome a proxima linha
         }
 
     //    verificaFloat(s);
@@ -90,12 +92,12 @@ public class Main
         f = input.nextInt();                            // para os quais o salário vai ser calculado;
         //verifica(f);
         
-        Main p = new Main(f);
+        Main p = new Main(f);   // objeto instanciado da classe principal
         
         System.out.println("--- Cadastro de Funcionarios");
 //        
-        p.entDados();    //       
-        p.geraFolha();
+        p.entDados();   //b. Invocar o método entDados no objeto instanciado da classe principal;           
+        p.geraFolha();  //c. Invocar o método geraFolha no objeto instanciado da classe principal.
         // calculaSalarios(); //???
     }
 }
