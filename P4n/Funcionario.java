@@ -1,7 +1,7 @@
 public class Funcionario
 {
     
-    String nome, codigo;
+    static String nome, codigo;
     float salario, salarioLiquido;
     
     public Funcionario(String n, String c, float s)
@@ -23,7 +23,6 @@ public class Funcionario
         return this.nome + "\n" +
         this.codigo+ "\n" +
         this.salario; // salarioBase?
-        ;
     }
     
 }
