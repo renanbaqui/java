@@ -22,7 +22,8 @@ public class FuncCntrd extends Funcionario
         float salarioBase = this.salario + this.salarioFamilia;
     //    return calculaSalario();
         this.salario = salarioBase;
-        return salarioBase;
+    //    return salarioBase;
+        return calculaSalario();
     }
     
     public String toString()
