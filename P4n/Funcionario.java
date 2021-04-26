@@ -14,13 +14,14 @@ public class Funcionario
     
     float calculaSalario(float desconto)
     {
-        return this.salario * (100 - desconto)/100;
+        this.salarioLiquido = salario * (100 - desconto)/100;
+        return salarioLiquido;
     }
     
     public String toString()
     {
         return this.nome + "\n" +
-        this.codigo+ "\n" +
+        this.codigo + "\n" +
         this.salario; // salarioBase?
     }
     
