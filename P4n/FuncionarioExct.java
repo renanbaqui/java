@@ -18,7 +18,7 @@ public class FuncionarioExct extends FuncCntrd
     public String toString()
     {
     
-        return super.toString() + "\n" +
+        return super.toString() + "*" + "\n" +
         this.gratificacao;
     }
     
