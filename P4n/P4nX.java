@@ -54,8 +54,6 @@ public class Main
                 // code block
             }
             
-            
-            
             //Funcionario f1 = new Funcionario(a, b, c);
             //teste.add(f1);
             entrada.nextLine(); // consome a proxima linha
@@ -86,7 +84,9 @@ public class Main
             System.out.println("Codigo:");
             System.out.println(st.codigo);
             System.out.println("Salario-Base:");
-            System.out.println(st.calculaSalario(st.dependentes)); // ao rodar o metodo atribui novo valor ao campo salario
+            st.calculaSalario(st.dependentes);
+        //    System.out.println(st.calculaSalario(st.dependentes)); // ao rodar o metodo atribui novo valor ao campo salario
+            System.out.println(st.salario);
             System.out.println("Salario-Liquido:");
             System.out.println(st.calculaSalario());
             System.out.println("----");
