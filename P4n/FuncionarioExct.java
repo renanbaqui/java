@@ -15,6 +15,10 @@ public class FuncionarioExct extends FuncCntrd
         return ok + this.gratificacao;
     }
     
+    // método getXXX para cada campo da classe
+    
+    public float getGratificacao() { return this.gratificacao; }
+    
     public String toString()
     {
     
