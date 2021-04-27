@@ -18,6 +18,16 @@ public class Funcionario
         return salarioLiquido;
     }
     
+    // métodos getXXX para cada campo da classe
+    
+    public String getNome() { return this.nome; }
+    
+    public String getCodigo() { return this.codigo; }
+    
+    public float getSalario() { return this.salario; }
+    
+    public float getSalarioLiquido() { return this.salarioLiquido; }
+    
     public String toString()
     {
         return this.nome + "\n" +
