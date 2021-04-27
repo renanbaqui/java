@@ -121,7 +121,7 @@ public class Main
             
             //Funcionario f1 = new Funcionario(a, b, c);
             //teste.add(f1);
-            entrada.nextLine(); // consome a proxima linha
+            //entrada.nextLine(); // consome a proxima linha
         }
 
     //    verificaFloat(s);
