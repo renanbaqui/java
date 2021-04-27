@@ -26,6 +26,16 @@ public class FuncCntrd extends Funcionario
         return calculaSalario();
     }
     
+    // métodos getXXX para cada campo da classe
+    
+    public int getDependentes() { return this.dependentes; }
+    
+    public float getSalarioFamilia() { return this.salarioFamilia; }
+    
+    public float getValorPorDep() { return this.valorPorDep; }
+    
+    public float getAliquotaIR() { return this.aliquotaIR; }
+    
     public String toString()
     {
         return this.nome + "\n" +
