@@ -26,7 +26,7 @@ public class FuncCntrd extends Funcionario
         this.salarioFamilia = numeroDependentes * valorPorDep; 
         float salarioBase = this.salario + this.salarioFamilia;
         this.salario = salarioBase;
-        this.salarioLiquido = calculaSalario(); //  invoca o metodo calculaSalario() para calcular seu salario liquido.
+        this.salarioLiquido = calculaSalario(); // invoca o metodo calculaSalario() para calcular seu salario liquido.
     
         return salarioLiquido;         
         
@@ -42,7 +42,7 @@ public class FuncCntrd extends Funcionario
     
     public float getAliquotaIR() { return this.aliquotaIR; }
     
-    public String toString()    // retorna um objeto String contendo o nome, código, salário base e salário líquido do empregado
+    public String toString()    // retorna um objeto String contendo o nome, codigo, salario base e salario liquido do empregado
     {
         
         return super.toString() + "\n" + // toString da classe pai
