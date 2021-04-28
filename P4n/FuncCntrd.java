@@ -1,29 +1,35 @@
 public class FuncCntrd extends Funcionario
 {
+    
     int dependentes;
     float salarioFamilia;
-    final float valorPorDep = 9.58f, aliquotaIR = 15.00f;
+    final float valorPorDep = 9.58f, aliquotaIR = 15.00f;   // campos de valor constante
     
-    public FuncCntrd(String a, String b, float d, int i)
+    public FuncCntrd(String a, String b, float d, int i)    // metodo construtor que recebe parametros para inicializar campos
     {
-        super(a, b, d);
-  //      Funcionario(a, b, d); // this. ??
+        
+        super(a, b, d); // referencia explicita ao construtor da classe Funcionario, que foi definido antes
         this.dependentes = i;
+        
     }
     
-    float calculaSalario()
+    float calculaSalario()  // metodo que calcula o salario liquido do empregado, invocando o metodo calculaSalario da superclasse
     {
-        return super.calculaSalario(aliquotaIR); // this.?
+        
+        return super.calculaSalario(aliquotaIR); 
+        
     }
     
-    float calculaSalario(int numeroDependentes)
+    float calculaSalario(int numeroDependentes) // metodo que calcula o valor no salario base do empregado, para empregados que possuam dependentes
     {
+        
         this.salarioFamilia = numeroDependentes * valorPorDep; 
         float salarioBase = this.salario + this.salarioFamilia;
-    //    return calculaSalario();
         this.salario = salarioBase;
-    //    return salarioBase;
-        return calculaSalario();
+        this.salarioLiquido = calculaSalario(); //  invoca o metodo calculaSalario() para calcular seu salario liquido.
+    
+        return salarioLiquido;         
+        
     }
     
     // métodos getXXX para cada campo da classe
@@ -36,12 +42,12 @@ public class FuncCntrd extends Funcionario
     
     public float getAliquotaIR() { return this.aliquotaIR; }
     
-    public String toString()
+    public String toString()    // retorna um objeto String contendo o nome, código, salário base e salário líquido do empregado
     {
-        return this.nome + "\n" +
-        this.codigo + "\n" +
-        (this.salario+this.salarioFamilia) + "\n" + // salario base
-        calculaSalario(); // salario liquido
+        
+        return super.toString() + "\n" + // toString da classe pai
+        this.salarioLiquido; // salario liquido
+        
     }
     
 }
