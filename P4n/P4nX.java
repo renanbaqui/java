@@ -3,7 +3,7 @@ import java.util.*;
 import java.math.RoundingMode;	// arredondamento de casas decimais
 import java.text.DecimalFormat;	// arredondamento de casas decimais
 
-public class Main
+public class P4nX
 {
     
 	static ArrayList<Funcionario> teste;	// objeto Arraylist Funcionario
@@ -12,7 +12,7 @@ public class Main
     
     	public static DecimalFormat df2 = new DecimalFormat("#.##");	// objeto de formato de duas casas decimais
   
-    	public Main(int numeroFuncionarios)	// instancia da classe principal conforme requisitado
+    	public P4nX(int numeroFuncionarios)	// construtor da classe principal, que recebe como argumento o numero de funcionarios a ser entrado
     	{
         
         	teste = new ArrayList<Funcionario>(numeroFuncionarios); 
@@ -21,7 +21,8 @@ public class Main
     
     	public static void verificaInt(String s)   // metodo de verificacao de numero inteiro
 	{
-	boolean numeric = true;
+		
+		boolean numeric = true;
 
 		try {	// verifica se e' numero inteiro
 		  Integer num = Integer.parseInt(s);
@@ -33,32 +34,38 @@ public class Main
 		{
 		  	System.out.println("O argumento “"+ s +"” nao eh numero inteiro.");
 		  	System.exit(0);
-		}    
+		}
+		
 	}
 	
 	public static void verificaNumero(int n)	// metodo de verificacao do numero de funcionarios (objetos)
 	{
+		
 		if (n<1 || n>10)
 	    	{
 	        	System.out.println("Numero de funcionarios invalido. Numero deve ser entre 1 e 10 inclusive.");
 		    	System.exit(0);
 	    	}
+		
 	}
     
-    	public static void verificaCE(String s)		// metodo de verificacao de contratado ou executivo
+    	public static void verificaCE(String s)		// metodo de verificacao de entrada de contratado ou executivo
     	{
-        	if(!s.equals("c") && !s.equals("e"))
+        	
+		if(!s.equals("c") && !s.equals("e"))
         	{
             		System.out.println("O argumento “"+ s +"” nao eh valido. Insira 'c' ou 'e'.");
 		    	System.exit(0);
         	}
+		
     	}
     
     	public static void verificaFloat(String s)   // metodo de verificacao de numero float
 	{
-    		boolean numeric = true;
+    		
+		boolean numeric = true;
     
-		try {	// verifica se e' numero double
+		try {	// verifica se e' numero float
 		  Float num = Float.parseFloat(s);
 		} catch (NumberFormatException e) {
 		  numeric = false;
@@ -68,7 +75,8 @@ public class Main
 		{
 		  	System.out.println("O argumento “"+ s +"” nao eh numero valido.");
 		  	System.exit(0);
-		}    
+		}
+		
 	}
     
     	public static void entDados()	// o metodo entDados e' uma rotina onde se pede ao usuario o tipo de funcionario a ser criado, 
@@ -113,11 +121,11 @@ public class Main
     	}
     
     	public static void geraFolha()	// o metodo geraFolha lista os objetos criados exibindo os detalhes de cada tipo (FuncCntrd e FuncExct), incluindo seu tipo,
-    	{				// dependentes, salario base e salario liquido.
+    	{				// dependentes, salario base e salario liquido
            
 		System.out.println("--- Folha Salarial ---\n");
 		
-		Iterator itr=teste.iterator();
+		Iterator itr=teste.iterator();	// objeto Iterador 
 		
 		while(itr.hasNext()){  
 			FuncCntrd st=(FuncCntrd)itr.next();
@@ -126,13 +134,13 @@ public class Main
 			System.out.println("Codigo:");
 			System.out.println(st.codigo);
 			System.out.println("Salario-Base:");
-			st.calculaSalario(st.dependentes);
-			// System.out.println(st.calculaSalario(st.dependentes)); // ao rodar o metodo atribui novo valor ao campo salario
+			st.calculaSalario(st.dependentes);	// ao chamar o metodo, este atribui novo valor calculado ao campo salario			 
 			System.out.println(df2.format(st.salario));
 			System.out.println("Salario-Liquido:");
 			System.out.println(df2.format(st.calculaSalario()));
 			System.out.println("----");
-		}         
+		}
+		
         }
     
     	public static void main(String[] args) {
@@ -145,18 +153,17 @@ public class Main
         
         	Scanner input = new Scanner(System.in);    
        
-        	System.out.println("Quantos Funcionarios?");        // pedir ao usuário o número de objetos (FuncCntrd e FuncExct) 
-        	f = input.nextLine();                               // para os quais o salário vai ser calculado;
+        	System.out.println("Quantos Funcionarios?");	// pede ao usuario o numero de objetos (FuncCntrd e FuncExct) para os quais o salario vai ser calculado
+        	f = input.nextLine();                            
         	verificaInt(f);
         	m = Integer.parseInt(f);	// converte para tipo de dados int
         	verificaNumero(m);
         
-        	Main p = new Main(m);   // objeto instanciado da classe principal
+        	P4nX objeto = new P4nX(m);   // objeto instanciado com construtor da classe principal com o numero de funcionarios como argumento
         
         	System.out.println("--- Cadastro de Funcionarios");
         
-        	p.entDados();   //b. Invocar o método entDados no objeto instanciado da classe principal;           
-        	p.geraFolha();  //c. Invocar o método geraFolha no objeto instanciado da classe principal.
-        	// calculaSalarios(); //???
+        	objeto.entDados();   // invocado o metodo entDados no objeto instanciado da classe principal           
+        	objeto.geraFolha();  // invocado o metodo geraFolha no objeto instanciado da classe principal        	
     	}
 }
