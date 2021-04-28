@@ -15,6 +15,7 @@ public class FuncionarioExct extends FuncCntrd
     {
         
         float adiciona = super.calculaSalario();
+        this.salarioLiquido = adiciona + this.gratificacao;
         return adiciona + this.gratificacao;
         
     }
