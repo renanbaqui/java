@@ -28,4 +28,4 @@ abstract class PessoaIMC extends Pessoa
                 "Peso: " + this.peso + "\n" +
                 "Altura: " + this.altura;
     }
-}    
+}   
