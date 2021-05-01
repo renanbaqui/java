@@ -1,6 +1,5 @@
 public class Pessoa
 {
-    
     private String nome, dataNascimento;
     //private GregorianCalendar dataNascimento; //data de nascimento
     
