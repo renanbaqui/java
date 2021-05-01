@@ -32,6 +32,26 @@ public class Main
 		
 	}
 	
+	public static void verificaDouble(String s)   // metodo de verificacao de numero float
+	{
+    		
+		boolean numeric = true;
+    
+		try {	// verifica se e' numero float
+		  Double num = Double.parseDouble(s);
+		} catch (NumberFormatException e) {
+		  numeric = false;
+		}
+        
+		if (!numeric)	// se nao e' numero imprime a linha abaixo e sai do programa
+		{
+		  	System.out.println("O argumento “"+ s +"” nao eh numero valido.");
+		  	System.exit(0);
+		}
+		
+	}
+	
+	
 	public static void verificaNumero(int n)	// metodo de verificacao do numero de funcionarios (objetos)
 	{
 		
@@ -68,7 +88,16 @@ public class Main
 		    	String a = entrada.nextLine();
 		    	System.out.println("Digite a data de nascimento:");
 		    	String b = entrada.nextLine();
-		    	Pessoa p1 = new Pessoa(a, b);
+		    	System.out.println("Peso:");
+		    	String x = entrada.nextLine();
+		    	verificaDouble(x);
+		    	double c = Double.parseDouble(x);
+		    	System.out.println("Altura:");
+		    	String y = entrada.nextLine();
+		    	verificaDouble(y);
+		    	double d = Double.parseDouble(y);
+		    	
+		    	Homem p1 = new Homem(a, b, c, d);
 		    	lista.add(p1);
 		    	
 		    	/*
