@@ -68,7 +68,7 @@ public class Main
     	
 	if(!s.equals("h") && !s.equals("m"))
     	{
-        		System.out.println("O argumento “"+ s +"” nao eh valido. Insira 'h' ou 'm'.");
+        	System.out.println("O argumento “"+ s +"” nao eh valido. Insira 'h' ou 'm'.");
 	    	System.exit(0);
     	}
 	
@@ -97,8 +97,16 @@ public class Main
 		    	verificaDouble(y);
 		    	double d = Double.parseDouble(y);
 		    	
-		    	Homem p1 = new Homem(a, b, c, d);
-		    	lista.add(p1);
+		    	switch(hm) {
+		    	case "h":
+    		    	Homem p1 = new Homem(a, b, c, d);
+    		    	lista.add(p1);
+    		    	break;
+    		    case "m":
+    		        Mulher p2 = new Mulher(a, b, c, d);
+    		    	lista.add(p2);
+    		    	break;
+		    	}
 		    	
 		    	/*
 		    	System.out.println("Salario:");
@@ -132,13 +140,15 @@ public class Main
 	public static void geraFolha()	// o metodo geraFolha lista os objetos criados exibindo os detalhes de cada tipo (FuncCntrd e FuncExct), incluindo seu tipo,
 	{				                // dependentes, salario base e salario liquido
        
-    	System.out.println("--------\n");
+    	
     	
     	Iterator itr=lista.iterator();	// objeto Iterador 
     	
     	while(itr.hasNext()){  
     		Pessoa st=(Pessoa)itr.next();
+    		System.out.println("--------");
     		System.out.println(st.toString());
+    		System.out.println("--------");
     		/*
     		System.out.println("Salario-Base:");
     		st.calculaSalario(st.dependentes);	// ao chamar o metodo, este atribui novo valor calculado ao campo salario			 
