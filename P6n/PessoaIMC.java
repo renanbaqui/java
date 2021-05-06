@@ -1,12 +1,16 @@
 abstract class PessoaIMC 
 {
+    private String nome;    // campo nome adicionado que anteriormente herdava da classe Pessoa
     private double peso, altura;
     
-    PessoaIMC(double p, double a)
+    PessoaIMC(String n, double p, double a) // construtor da classe
     {
+        this.nome = n;
         this.peso = p;
         this.altura = a;
     }
+    
+    public String getNome(){ return this.nome; }
     
     public double getPeso(){ return this.peso; }
     
@@ -18,12 +22,10 @@ abstract class PessoaIMC
         return imc;
     }
     
-    //  Abstract method (does not have a body)
-    //  public abstract String resultIMC(); // esta certo?
-    
-        public String toString()
+    public String toString()
     {
-        return  "Peso: " + this.peso + "\n" +
+        return  "Nome: " + this.nome + "\n" +
+                "Peso: " + this.peso + "\n" +
                 "Altura: " + this.altura;
     }
 }   

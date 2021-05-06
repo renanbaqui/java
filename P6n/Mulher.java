@@ -6,9 +6,9 @@ public class Mulher extends PessoaIMC
     
     public static DecimalFormat df2 = new DecimalFormat("#.##");	// objeto de formato de duas casas decimais
     
-    Mulher(double p, double a)
+    Mulher(String n, double p, double a)
     {
-        super(p, a);
+        super(n, p, a);
     }
     
     public String resultIMC()
