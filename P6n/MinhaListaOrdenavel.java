@@ -2,24 +2,25 @@ import java.util.*;
 
 public class MinhaListaOrdenavel
 {
-    public ArrayList<PessoaIMC> lista;
+    public ArrayList<PessoaIMC> lista; // objeto da classe ArrayList que coleciona objetos da classe PessoaIMC
     
     MinhaListaOrdenavel()
     {
         this.lista = new ArrayList<PessoaIMC>(10);
     }
     
-    public void adi(PessoaIMC p)    // VERIFICAR add
+    public void add(PessoaIMC p)    // metodo para adicionar objetos ao ArrayList interno    
     {
         this.lista.add(p);
     }
     
     
-    public PessoaIMC geti(int i)    // VERIFICAR get
+    public PessoaIMC get(int i)     // metodo para resgatar objetos do ArrayList interno    
     {
         return this.lista.get(i);
     }
     
+    // multiplas formas de ordenar a lista de PessoaIMC
     class nomeC implements Comparator<PessoaIMC> 
     {
         public int compare(PessoaIMC p1, PessoaIMC p2) // recebe objetos PessoaIMC
@@ -67,8 +68,18 @@ public class MinhaListaOrdenavel
         }
     }
     
+    class generoC implements Comparator<PessoaIMC> 
+    {
+        public int compare(PessoaIMC p1, PessoaIMC p2) // recebe objetos PessoaIMC
+        { 
+            String nome1 = p1.getClass().getSimpleName();
+	        String nome2 = p2.getClass().getSimpleName();
+            return nome1.compareTo(nome2);
+        }
+    }
     
-    public ArrayList<PessoaIMC> ordena(int criterio) 
+    // metodo 'ordena' que recebe uma constante da tabela e devolve objeto da classe ArrayList, com os objetos da classe PessoaIMC ordenados
+    public ArrayList<PessoaIMC> ordena(int criterio)    
     {
         switch (criterio){
             case 1: // nome crescente
@@ -94,6 +105,9 @@ public class MinhaListaOrdenavel
             break;
             case 8: // imc decrescente
                 Collections.sort(this.lista, new imcC());      
+            break;
+            case 9: // genero
+                Collections.sort(this.lista, new generoC());  
             break;
         }
         return this.lista;
