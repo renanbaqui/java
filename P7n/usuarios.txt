@@ -1,0 +1,28 @@
+{1546=Nome: Carlos
+Data de Nascimento: 1/8/1990
+Endereco: Rua
+Codigo: 1546
+Historico: 
+[Data de Emprestimo: 3/2/2012
+Data de Devolucao: 5/2/2012
+Codigo do Livro: OSK
+, Data de Emprestimo: 3/1/2013
+Data de Devolucao: 3/2/2012
+Codigo do Livro: OAD
+], 8552=Nome: Renata
+Data de Nascimento: 10/10/1998
+Endereco: Estrada
+Codigo: 8552
+Historico: 
+[Data de Emprestimo: 4/4/2014
+Data de Devolucao: 7/4/2014
+Codigo do Livro: OLK
+], 2696=Nome: Felipe
+Data de Nascimento: 21/1/1991
+Endereco: Avenida
+Codigo: 2696
+Historico: 
+[Data de Emprestimo: 3/2/2011
+Data de Devolucao: 5/2/2011
+Codigo do Livro: OGK
+]}
