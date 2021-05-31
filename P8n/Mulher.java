@@ -30,7 +30,6 @@ public class Mulher extends PessoaIMC
     public String toString()
     {
         return  super.toString() + "\n" +
-                "IMC: " + df2.format(super.calculaIMC(super.getAltura(), super.getPeso())) + "\n" + 
-                resultIMC(); 
+                "IMC: " + df2.format(super.calculaIMC(super.getAltura(), super.getPeso())); 
     }
 }

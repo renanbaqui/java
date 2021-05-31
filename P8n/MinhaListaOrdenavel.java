@@ -8,7 +8,7 @@ public class MinhaListaOrdenavel
     
     MinhaListaOrdenavel()
     {
-        this.lista = new ArrayList<PessoaIMC>(10);
+        this.lista = new ArrayList<PessoaIMC>(20);
     }
     
     // metodo para retornar a lista do objeto MinhaListaOrdenavel
@@ -18,6 +18,11 @@ public class MinhaListaOrdenavel
     public void add(PessoaIMC p)    // metodo para adicionar objetos ao ArrayList interno    
     {
         this.lista.add(p);
+    }
+    
+    public void addPos(int n, PessoaIMC p)    // metodo para adicionar objetos ao ArrayList interno    
+    {
+        this.lista.set(n, p);
     }
     
     

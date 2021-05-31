@@ -26,8 +26,8 @@ abstract class PessoaIMC
     
     public String toString()
     {
-        return  "Nome: " + this.nome + "\n" +
-                "Peso: " + this.peso + "\n" +
-                "Altura: " + this.altura;
+        return  "Nome: " + this.nome + " " +
+                "Peso: " + this.peso + " " +
+                "Altura: " + this.altura + " ";
     }
 }   
