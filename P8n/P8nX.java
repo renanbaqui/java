@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class P8nX extends javax.swing.JFrame {
 
     /**
-     * Creates new form MyFirstForm
+     * Creates new form P8nX
      */
     public P8nX() {
         initComponents();
@@ -32,7 +32,7 @@ public class P8nX extends javax.swing.JFrame {
     static Mulher p3 = new Mulher("Ana", 81, 1.67);
     static Homem p4 = new Homem("Joao", 85, 1.79);
     static Homem p5 = new Homem("Antonio", 91, 1.83);
-    static Mulher p6 = new Mulher("Francisca", 69, 1.61);
+    static Mulher p6 = new Mulher("Renata", 69, 1.61);
     static Homem p7 = new Homem("Carlos", 71, 1.75);
     static Homem p8 = new Homem("Paulo", 82, 1.71);
     static Mulher p9 = new Mulher("Adriana", 63, 1.64);
@@ -42,8 +42,7 @@ public class P8nX extends javax.swing.JFrame {
     static double pesoPessoa, alturaPessoa;
     
     static String buff1, buff2;
-    static int erroPeso = 0;
-    static int erroAltura = 0;
+    static int erroNome = 0, erroPeso = 0, erroAltura = 0;    
     
     static DecimalFormat df2 = new DecimalFormat("#.##");
     
@@ -91,6 +90,7 @@ public class P8nX extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(410, 600));
 
         jLabel2.setText("Lista de Pessoas");
 
@@ -225,7 +225,7 @@ public class P8nX extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(jLabel2)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,7 +250,7 @@ public class P8nX extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,7 +264,7 @@ public class P8nX extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -288,57 +288,88 @@ public class P8nX extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        generoPessoa = String.valueOf(jComboBox1.getSelectedItem());
-        nomePessoa = jTextField1.getText();
-        buff1 = jTextField2.getText();
-        buff2 = jTextField3.getText();
+        generoPessoa = String.valueOf(jComboBox1.getSelectedItem());    // recebe o genero selecionado
+        nomePessoa = jTextField1.getText(); // recebe o texto do campo nome
+        buff1 = jTextField2.getText();  // recebe o texto do campo peso
+        buff2 = jTextField3.getText();  // recebe o texto do campo altura
         
-        boolean numeric = true;
-
-	try {	// verifica se e' numero inteiro
-	  Double num = Double.parseDouble(buff1);
-	} catch (NumberFormatException e) {
-	  numeric = false;
-	}
-	if (!numeric)	// se nao e' numero imprime a linha abaixo e sai do programa
-	{
-	    erroPeso = 1;
-            jTextField4.setText("Peso invalido.\nNao eh um numero.");	    
-	}
-        
-        try {	// verifica se e' numero inteiro
-	  Double num = Double.parseDouble(buff2);
-	} catch (NumberFormatException e) {
-	  numeric = false;
-	}
-	if (!numeric)	// se nao e' numero imprime a linha abaixo e sai do programa
-	{
-	    erroAltura = 1;
-            jTextField4.setText("Altura invalida.\nNao eh um numero.");	    
-	}
-        
-        
-        pesoPessoa = Double.parseDouble(buff1);
-        alturaPessoa = Double.parseDouble(buff2);
-        
-        if (pesoPessoa<1 || pesoPessoa>500) {
-            erroPeso = 1;
-            jTextField4.setText("Peso invalido.\nNumero deve ser entre 1 e 500 inclusive.");            
+        if ("".equals(nomePessoa)) {    // verifica se o campo nome esta vazio
+            erroNome = 1;
+            jTextField4.setText("Nome vazio. Insira um nome.");
+        } else {
+            erroNome = 0;
         }
-        else {
+        
+        if ("".equals(buff1)) {     // verifica se o campo peso esta vazio
+            erroPeso = 1;
+            jTextField4.setText("Peso vazio. Insira um peso.");
+        } else {        
             erroPeso = 0;
         }
         
-        if (alturaPessoa<0.3 || alturaPessoa>2.5) {
+        if ("".equals(buff2)) {     // verifica se o campo altura esta vazio
             erroAltura = 1;
-            jTextField4.setText("Altura invalida.\nNumero deve ser entre 0.3 e 2.5 inclusive.");
-        }
-        else {
+            jTextField4.setText("Altura vazia. Insira uma altura.");
+        } else {        
             erroAltura = 0;
-        }  
+        }
         
+        boolean numeric = true;
+        boolean numeric2 = true;
+	
+        if (erroPeso == 0) {
+            try {	// verifica se e' numero double
+              Double num = Double.parseDouble(buff1);
+            } catch (NumberFormatException e) {
+              numeric = false;
+            }
+            if (!numeric)	// se nao e' numero double imprime a linha abaixo 
+            {
+                erroPeso = 1;
+                jTextField4.setText("Peso invalido. Nao eh um numero.");	    
+            }
+        }
         
-        if (erroPeso == 0 && erroAltura == 0) {
+        if (erroAltura == 0) {
+            try {	// verifica se e' numero double
+              Double num2 = Double.parseDouble(buff2);
+            } catch (NumberFormatException e) {
+              numeric2 = false;
+            }
+            if (!numeric2)	// se nao e' numero double imprime a linha abaixo 
+            {
+                erroAltura = 1;
+                jTextField4.setText("Altura invalida. Nao eh um numero.");	    
+            }
+        }        
+        if (erroPeso == 0){
+            pesoPessoa = Double.parseDouble(buff1);
+        }
+        if (erroAltura == 0) {
+            alturaPessoa = Double.parseDouble(buff2);
+        }
+        
+        if (erroPeso == 0) {
+            if (pesoPessoa<1 || pesoPessoa>500) {   // verifica se o peso esta dentro do requisito
+                erroPeso = 1;
+                jTextField4.setText("Peso invalido. Numero deve ser entre 1 e 500 inclusive.");            
+            }
+            else {
+                erroPeso = 0;
+            }
+        }
+        
+        if (erroAltura == 0) {
+            if (alturaPessoa<0.3 || alturaPessoa>2.5) { // verifica se a altura esta dentro do requisito
+                erroAltura = 1;
+                jTextField4.setText("Altura invalida. Numero deve ser entre 0.3 e 2.5 inclusive.");
+            }
+            else {
+                erroAltura = 0;
+            }  
+        }
+        
+        if (erroNome == 0 && erroPeso == 0 && erroAltura == 0) {  // caso nao hajam erros nos campos nome, peso e altura 
             switch (generoPessoa) {
             case "Homem":
                 Homem p11 = new Homem(nomePessoa, pesoPessoa, alturaPessoa);
@@ -361,17 +392,7 @@ public class P8nX extends javax.swing.JFrame {
                 
                 break;
             }
-        }
-        
-
-        
-        //jButton1.setText(nomePessoa); // muda o texto do botao para teste
-        
-        /*jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { objeto.get(0).toString(), objeto.get(1).toString(), objeto.get(2).toString(), objeto.get(3).toString(), objeto.get(4).toString(), objeto.get(5).toString(), objeto.get(6).toString(), objeto.get(7).toString(), objeto.get(8).toString(), objeto.get(9).toString()};
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });*/
+        }        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -381,7 +402,7 @@ public class P8nX extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String selecionado = jComboBox2.getSelectedItem().toString();
+        String selecionado = jComboBox2.getSelectedItem().toString();   // recebe o string com o metodo de ordenacao
         int n = 1;
         
         switch(selecionado){
@@ -414,14 +435,9 @@ public class P8nX extends javax.swing.JFrame {
                 break;                 
         }        
         
-        objeto.ordena(n);
-        
-        
-        DefaultTableModel model3 = (DefaultTableModel) jTable2.getModel();
-        //model3.fireTableDataChanged();
-        //jTable2.repaint();
-        //jScrollPane3.setViewportView(jTable2);
-        
+        objeto.ordena(n);   // aplica o metodo ordena para ordenar        
+       
+        // atualiza a tabela com os valores ordenados
         jTable2.setModel(new javax.swing.table.DefaultTableModel(new Object [][] {
         
             {objeto.get(0).getNome(), objeto.get(0).getPeso(), objeto.get(0).getAltura(), df2.format(objeto.get(0).calculaIMC(objeto.get(0).getAltura(), objeto.get(0).getPeso())), objeto.get(0).getClass().getSimpleName()},
@@ -438,13 +454,8 @@ public class P8nX extends javax.swing.JFrame {
             new String [] {
             "Nome", "Peso", "Altura", "IMC", "Genero"
             }
-        ));
-        
-        /*jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { objeto.get(0).toString(), objeto.get(1).toString(), objeto.get(2).toString(), objeto.get(3).toString(), objeto.get(4).toString(), objeto.get(5).toString(), objeto.get(6).toString(), objeto.get(7).toString(), objeto.get(8).toString(), objeto.get(9).toString()};
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });        */
+        ));       
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
