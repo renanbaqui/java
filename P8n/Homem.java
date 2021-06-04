@@ -1,4 +1,4 @@
-package my_package;
+
 
 import java.math.RoundingMode;	// arredondamento de casas decimais
 import java.text.DecimalFormat;	// arredondamento de casas decimais

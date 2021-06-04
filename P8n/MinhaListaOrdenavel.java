@@ -1,4 +1,4 @@
-package my_package;
+
 
 import java.util.*;
 
@@ -84,7 +84,7 @@ public class MinhaListaOrdenavel
         public int compare(PessoaIMC p1, PessoaIMC p2) // recebe objetos PessoaIMC
         { 
             String nome1 = p1.getClass().getSimpleName();
-	        String nome2 = p2.getClass().getSimpleName();
+	    String nome2 = p2.getClass().getSimpleName();
             return nome1.compareTo(nome2);
         }
     }
