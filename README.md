@@ -4,6 +4,7 @@
 -testar toString
 -usar getters
 
+-adicionar imagens gui
 
 lembrar de configurar a privacidade e proteção da VM!
 
