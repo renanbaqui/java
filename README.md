@@ -1,5 +1,6 @@
 # lp
 
+-upload .jar
 -fazer uml
 -testar toString
 -usar getters
