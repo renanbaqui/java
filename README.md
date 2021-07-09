@@ -11,4 +11,4 @@
 
 User Interface:
 
-![JApplet](https://github.com/renanbaqui/sistdist/blob/main/processing.png)
+![JApplet](https://github.com/renanbaqui/lp/blob/main/P8n/GUI.JPG)
