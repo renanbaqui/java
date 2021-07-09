@@ -2,7 +2,7 @@
 
 ## Project
 
-- A Java Applet GUI for inserting and display people on a database and also sorting them according to several metrics (height, weight, BMI, gender, etc.)
+- A Java Applet GUI for inserting and displaying people on a database and also sorting them according to several different metrics (height, weight, BMI, gender, etc.)
 
 > Made on Apache Netbeans
 
